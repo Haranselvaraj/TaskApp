@@ -1,24 +1,44 @@
-import logo from './logo.svg';
+import AppBar from '@material-ui/core/AppBar';
+import Tasklist from './Tasklist.js';
+import { Provider } from 'react-redux';
+import TaskItem from './components/taskItem';
+import store from './redux/createStore';
+import InputSection from './components/inputSection';
+import React, { useEffect} from 'react';
 import './App.css';
 
+
+
+
+
+
+
+
+
 function App() {
+  
+
+  
   return (
+    <Provider store={store}>
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <AppBar className="Appbar" color="primary">
+        <h3>
+          {"TaskApp"}
+        </h3>
+
+      </AppBar>
+      <div style={{marginTop:100}}>
+      <InputSection/>
+
+      </div>
+      <hr></hr>
+      <div>
+        <TaskItem/>
+      </div>
+      
     </div>
+    </Provider>
   );
 }
 

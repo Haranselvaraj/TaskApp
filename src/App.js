@@ -1,5 +1,4 @@
 import AppBar from '@material-ui/core/AppBar';
-import Tasklist from './Tasklist.js';
 import { Provider } from 'react-redux';
 import TaskItem from './components/taskItem';
 import store from './redux/createStore';
